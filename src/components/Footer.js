@@ -1,13 +1,14 @@
 import React from "react";
-import footerLogo from "../assets/images/Mario and Adrian A.jpg"
+import restaurantImage from "../assets/images/restaurant.jpg"
 import '../App.css';
+
 const Footer = () => {
     return (
-      
-        <footer className="footerRow">
-            <img src={footerLogo} alt="Propietors" />
-            <div className="footerColumn">
-                <ul>
+        <footer className="footer">
+            <div className="footer-block content-block"> 
+              <img className='footer-image' src={restaurantImage} alt="Restaurant verander" />
+              <div className="footer-columns">
+                  <ul className="footer-column">
                     <li><strong>Navigation</strong></li>
                     <li>Home</li>
                     <li>About</li>
@@ -15,28 +16,23 @@ const Footer = () => {
                     <li>Reservations</li>
                     <li>Order</li>
                     <li>Login</li>
-                </ul>
-                
-            </div>
-            <div className="footerColumn">
-                <ul>
+                  </ul>
+                  <ul className="footer-column">
                     <li><strong>Contact</strong></li>
                     <li>address</li>
                     <li>city</li>
                     <li>postcode</li>
                     <li>telephone</li>
-                </ul>
-            </div>
-            <div className="footerColumn">
-            <ul>
+                  </ul>
+                  <ul  className="footer-column">
                     <li><strong>Social Media</strong></li>
                     <li>Meta</li>
                     <li>X</li>
                     <li>Instagram</li>
-                </ul>
+                  </ul>
+                </div>
             </div>
         </footer>
-      
     );
   };
   export default Footer;

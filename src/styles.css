@@ -1,0 +1,95 @@
+body {
+    background-color:#EDEFEE;
+}
+
+
+
+nav  li {
+    list-style-type: none;
+}
+
+li > a  {
+    text-decoration: none;
+}
+
+
+
+h1 {
+    font-family:Markaza, 'Times New Roman', Times, serif;
+    font-size:40px;
+}
+
+p {
+    font-family:Karla,Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.bg-green {
+    background-color:#495E57;
+}
+
+.bg-yellow {
+    background-color:#F4CE14;
+}
+
+.text-yellow {
+    color:#F4CE14;
+}
+
+.text-light {
+   color:#EDEFEE;
+}
+
+.text-dark {
+    color:#333333;
+}
+
+.specials-list {
+    list-style-type: none;
+}
+
+.special-image {
+    border-radius:16px 16px 0 0;
+}
+
+.testimonials-list {
+    list-style-type: none;
+}
+
+.footer-column > li {
+    list-style-type: none; 
+}
+
+.hero-button {
+   background-color: #F4CE14; 
+   border-radius: 16px;
+   font-size:16px;
+   color:#333333;
+   border-style: none;
+}
+
+.specials-button {
+   background-color: #F4CE14; 
+   border-radius: 16px;
+   font-size:16px;
+   color:#333333;
+   border-style: none;
+}
+
+.special-title {
+    font-family:Karla,Verdana, Geneva, Tahoma, sans-serif;
+    font-size:18px;
+    font-weight: bold;
+
+}
+
+.special-price {
+    font-family:Karla,Verdana, Geneva, Tahoma, sans-serif;
+    font-size:18px;
+    color:#EE9972;
+}
+
+.bg-salmon {
+    background-color:#EE9972;
+}
