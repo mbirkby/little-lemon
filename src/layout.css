@@ -256,6 +256,24 @@ nav {
    flex-grow:1;
 }
 
+.booking-form {
+    width:40%;
+    margin:auto;
+    
+}
+
+.button {
+    width:200px;
+    height:50px;
+}
+
+.booking-inputs {
+    display: grid;
+    grid-template-rows: 1fr;
+    padding:10px;
+    gap:10px;
+}
+
 @media screen and (max-width:800px){
     .hero-block {
         grid-template-columns: 1fr;
@@ -295,6 +313,8 @@ nav {
     .about-image-b {
        
     }
+
+    
 
     
 }

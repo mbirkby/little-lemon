@@ -1,18 +1,22 @@
 import React from "react";
 
-import Hero from "./Hero";
-import Specials from "./Specials";
-import Testimonials from "./Testimonials";
-import About from "./About";
+import {Routes, Route} from 'react-router-dom';
+import {useState} from 'react';
+import HomePage from './HomePage';
+import BookingPage from './BookingPage';
+
 
 const Main = () => {
+    const [availableTimes, setAvailableTimes] = useState(["17:00","18:00","19:00","20:00","21:00","22:00"]);
+    
+    
     return (
-      
         <main>
-           <Hero />
-           <Specials />
-           <Testimonials/>
-           <About />
+            
+            <Routes> 
+                <Route path="/" element={<HomePage />}></Route>
+                <Route path="/booking" element={<BookingPage availableTimes={availableTimes}/>}></Route>
+            </Routes>
         </main>
       
     );
