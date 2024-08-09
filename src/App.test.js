@@ -46,7 +46,10 @@ test('Date Change Handler is called when date is changed',() => {
     render(<BookingForm availableTimes={availableTimes} dateChangeHandler={dateChangeHandler} submitHandler={submitHandler}/>);
 
     const dateField = screen.getByLabelText(/Date/);
-    fireEvent.change(dateField, { target: { value: "2024-06-23"} });
+    act(()=> {
+        fireEvent.change(dateField, { target: { value: "2024-06-23"} });
+    })
+    
 
     expect(dateChangeHandler).toHaveBeenCalledWith("2024-06-23");
 })
