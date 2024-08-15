@@ -1,8 +1,8 @@
 import {fireEvent, render, screen } from "@testing-library/react";
 import userEvent from '@testing-library/user-event'
 import BookingForm from './components/BookingForm';
-import  {initializeTimes, updateTimes} from './components/Main';
 import {act} from "react-dom/test-utils"
+import {initializeTimes, updateTimes} from './components/Main';
 
 
 
@@ -17,21 +17,23 @@ test('Renders the BookingForm heading', () => {
     expect(headingElement).toBeInTheDocument();
 });
 
-test('initialize times',() => {
-   
-    const initialTimes = initializeTimes();
+test('Test initialize times returns the correct times for a given date',() => {
+     const initialTimes = initializeTimes();
+
+    
     expect(initialTimes).toStrictEqual(["17:00","18:00","19:00","20:00","21:00","22:00"]);
 })
 
 
 test('Update times',()=> {
     const initialState = ["17:00","18:00","19:00","20:00","21:00","22:00"]
-    const date = new Date();
+    const date = new Date('2023-08=24');
+    
     
     
     const action = {
         type:'update-times', 
-        date:date,
+        date:'2023-08=24'
     };
    
     const updatedTimes = updateTimes(initialState,action);
@@ -51,7 +53,7 @@ test('Date Change Handler is called when date is changed',() => {
     })
     
 
-    expect(dateChangeHandler).toHaveBeenCalledWith("2024-06-23");
+    expect(dateChangeHandler).toHaveBeenCalledWith({type:'update-times', date:"2024-06-23"});
 })
 
 test('Submit button runs handler with correct form properties',()=> {

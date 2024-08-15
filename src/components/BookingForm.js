@@ -1,12 +1,16 @@
 import {useState} from 'react';
+//import { useEffect } from 'react';
 
-import BookingSlot from './BookingSlot';
+//import BookingSlot from './BookingSlot';
 const BookingForm = ({availableTimes, dateChangeHandler, submitHandler}) => {
-    const [resDate, setResDate] = useState(new Date());
+    const [resDate, setResDate] = useState("");
     const[resTime, setResTime] = useState("");
     const [guests, setGuests] = useState(2);
     const [occasion, setOccasion] = useState("None");
 
+    
+    
+    
     function bundleData() {
         const data = {resDate, resTime, guests, occasion}
         return data;
@@ -28,16 +32,27 @@ const BookingForm = ({availableTimes, dateChangeHandler, submitHandler}) => {
     
 
     function clearForm() {
-        setResDate(new Date());
+        setResDate("");
         setResTime("");
         setGuests(2);
         setOccasion("None");
     }
 
-    const handleDateChange =(newDate) =>{
-        setResDate(newDate) ;
-        dateChangeHandler(newDate);
+
+    
+    function updateDate(dateStr) {
+        console.log("updateDate ("+dateStr+")");
+        setResDate(dateStr);
+        
+        const action = {
+            type:'update-times',
+            date:dateStr
+        }
+
+        dateChangeHandler(action);
+
     }
+    
 
 
     return (
@@ -47,13 +62,13 @@ const BookingForm = ({availableTimes, dateChangeHandler, submitHandler}) => {
                 <form className=" booking-inputs" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="res_date">Date</label><br />
-                        <input type="date" value={resDate}  onChange={e => handleDateChange(e.target.value)} name="res_date" id="res_date" />
+                        <input type="date" value={resDate}  onChange={e => updateDate(e.target.value)} name="res_date" id="res_date" />
                     </div>
                     <div>
                         <label htmlFor="res_time">Time</label><br />
                         <select id="res_time" name="res-time" value={resTime} onChange={e => setResTime(e.target.value)}>
                             {availableTimes.map((time) => (
-                                <option role="option" key={time}>{time}</option>
+                                <option  key={time}>{time}</option>
                             ))}
                         </select>
                     </div>
@@ -65,9 +80,9 @@ const BookingForm = ({availableTimes, dateChangeHandler, submitHandler}) => {
                     <div>
                         <label htmlFor="occasion">Occasion</label><br />
                         <select id="occasion"  value={occasion} onChange={e=>setOccasion(e.target.value)}>
-                            <option role='option' key="1">None</option>
-                            <option role='option' key="2">Birthday</option>
-                            <option role='option' key="3">Aniversary</option>
+                            <option  key="1">None</option>
+                            <option  key="2">Birthday</option>
+                            <option  key="3">Aniversary</option>
                         </select>
 
                     </div>

@@ -4,24 +4,27 @@ import TestimonialCard from './TestimonialCard';
 const Testimonials = () => {
     const testimonials = [
         {
-            rating :5,
+            id:1, 
+            rating:5,
             name: 'Mary',
             image: require('../assets/images/mary'),
             comment:'Lovely food'
         },
         {
-            rating :3,
+            id: 2,
+            rating: 3,
             name: 'Mark',
             image: require('../assets/images/mark'),
             comment:'Lively atmosphere and great service',
         },
         {
-            rating :4,
+            id: 3,
+            rating: 4,
             name: 'Sue',
             image: require('../assets/images/sue'),
             comment:'Recommend the greek salad'
         },
-        {
+        {   id: 4,
             rating :5,
             name: 'John',
             image: require('../assets/images/john.jpg'),
@@ -35,7 +38,7 @@ const Testimonials = () => {
 
                 <ul className="testimonials-list">
                     {testimonials.map((testimonial)=>(
-                    <TestimonialCard testimonial={testimonial} />
+                    <TestimonialCard key={testimonial.id} testimonial={testimonial} />
                     )
                     )}
                 </ul>

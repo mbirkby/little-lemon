@@ -33,7 +33,7 @@ const Specials = () => {
             <section className="specials-block content-block">
                     <div className="specials-header">
                         <h1 className="specials-title">Specials</h1>
-                        <button class="specials-button" type="button" >Online Menu</button>
+                        <button className="specials-button" type="button" >Online Menu</button>
                     </div>
                     <ul className="specials-list">
                     {

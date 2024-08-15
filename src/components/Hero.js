@@ -6,14 +6,14 @@ const Hero= () => {
         <article className='hero bg-green'>
             <div className="hero-block content-block">
                 <section className="hero-text">
-                    <div class="hero-titles">
+                    <div className="hero-titles">
                         <h1 className="text-yellow text-title" >Little Lemon</h1>
                         <h2 className="text-light text-subtitle">Chicago</h2>
                     </div>
-                    <p class="hero-text text-light">
+                    <p className="hero-text text-light">
                          Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual  environment.  The restaurant features locally sourced menu with daily specials 
                     </p>
-                    <button class="hero-button" type="button">See More</button>
+                    <button className="hero-button" type="button">See More</button>
                 </section>
                 <section className="hero-image">
                     <img  src={foodimage} alt="waiter carrying food" />
