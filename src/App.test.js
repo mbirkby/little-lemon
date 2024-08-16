@@ -94,24 +94,140 @@ test('Submit button runs handler with correct form properties',()=> {
     });
        
   
-    expect(screen.getByRole('option', {name: "19:00"}).selected).toBe(true);
-    expect(screen.getByRole('option', {name: 'Birthday'}).selected).toBe(true);
-    expect(screen.getByRole('option', {name: 'Aniversary'}).selected).toBe(false);
-    expect(screen.getByRole('option', {name: 'None'}).selected).toBe(false);
+    expect(screen.getByText('19:00').selected).toBe(true);
+    expect(screen.getByText('Birthday').selected).toBe(true);
+    expect(screen.getByText('Aniversary').selected).toBe(false);
+    expect(screen.getByText('-- select an occasion --').selected).toBe(false);
     
     act(()=> {
         fireEvent.click(submitButton);
     })
-    
-    
-    
-
-    
-    
-    
 
     expect(submitHandler).toHaveBeenCalledWith({resDate, resTime, guests, occasion});
     
 });
+
+test('Test validation attributes on html input elements',()=> {
+    const availableTimes = ["17:00","18:00","19:00","20:00","21:00","22:00"];
+    const dateChangeHandler = jest.fn();
+    const submitHandler = jest.fn();
+
+   
+
+    render(<BookingForm availableTimes={availableTimes} dateChangeHandler={dateChangeHandler} submitHandler={submitHandler}/>);
+
+    const dateField = screen.getByLabelText("Date*");
+    expect(dateField).toHaveAttribute("required");
+
+
+    const timeField = screen.getByLabelText("Time*");
+    expect(timeField).toHaveAttribute("required");
+
+    const guests= screen.getByLabelText("Number Of Guests*");
+    expect(guests).toHaveAttribute("required");
+    expect(guests).toHaveAttribute("min","1");
+    expect(guests).toHaveAttribute("max","10");
+
+    const occasion= screen.getByLabelText("Occasion");
+    expect(occasion).not.toHaveAttribute("required");
+
+});
+
+
+test('Test initial form has disabled submit button',()=> {
+    const availableTimes = ["17:00","18:00","19:00","20:00","21:00","22:00"];
+    const dateChangeHandler = jest.fn();
+    const submitHandler = jest.fn();
+    render(<BookingForm availableTimes={availableTimes} dateChangeHandler={dateChangeHandler} submitHandler={submitHandler}/>);
+
+    const submitButton = screen.getByRole('button');
+    expect(submitButton.disabled).toBe(true);
+    
+
+})
+
+test('Test form is disabled when just date is selected',()=> {
+    const availableTimes = ["17:00","18:00","19:00","20:00","21:00","22:00"];
+    const dateChangeHandler = jest.fn();
+    const submitHandler = jest.fn();
+    const resDate = "2024-08-18"; 
+   
+    render(<BookingForm availableTimes={availableTimes} dateChangeHandler={dateChangeHandler} submitHandler={submitHandler}/>);
+    const dateField = screen.getByLabelText(/Date/);
+    act(() => {
+        fireEvent.change(dateField, { target: { value: resDate } });
+    });
+
+    const submitButton = screen.getByRole('button');
+    expect(submitButton.disabled).toBe(true);
+    
+
+})
+
+test('Test form is disabled when just time is selected',()=> {
+    const availableTimes = ["17:00","18:00","19:00","20:00","21:00","22:00"];
+    const dateChangeHandler = jest.fn();
+    const submitHandler = jest.fn();
+    const resDate = "2024-08-18"; 
+    const resTime = "18:00"
+   
+    render(<BookingForm availableTimes={availableTimes} dateChangeHandler={dateChangeHandler} submitHandler={submitHandler}/>);
+    const timeField = screen.getByLabelText(/Time/);
+    act(() => {
+        userEvent.selectOptions(timeField, resTime);(timeField, { target: { value: resTime } });
+    });
+
+    const submitButton = screen.getByRole('button');
+    expect(submitButton.disabled).toBe(true);
+    
+
+});
+
+test('Test form is disabled when date and time selected but number ofguests is invalid',()=> {
+    const availableTimes = ["17:00","18:00","19:00","20:00","21:00","22:00"];
+    const dateChangeHandler = jest.fn();
+    const submitHandler = jest.fn();
+    const resDate = "2024-08-18"; 
+    const resTime = "18:00"
+   
+    render(<BookingForm availableTimes={availableTimes} dateChangeHandler={dateChangeHandler} submitHandler={submitHandler}/>);
+    const dateField = screen.getByLabelText(/Date/);
+    const timeField = screen.getByLabelText(/Time/);
+    const guestsField = screen.getByLabelText(/Guests/);
+    act(() => {
+        fireEvent.change(dateField, { target: { value: resDate } });
+        userEvent.selectOptions(timeField, resTime);
+        fireEvent.change(guestsField, { target: { value: 0 } });
+    });
+
+    const submitButton = screen.getByRole('button');
+    expect(submitButton.disabled).toBe(true);
+    
+
+});
+
+test('Test initial form is not disabled when date and time selected and number of guests is valid',()=> {
+    const availableTimes = ["17:00","18:00","19:00","20:00","21:00","22:00"];
+    const dateChangeHandler = jest.fn();
+    const submitHandler = jest.fn();
+    const resDate = "2024-08-18"; 
+    const resTime = "18:00"
+   
+    render(<BookingForm availableTimes={availableTimes} dateChangeHandler={dateChangeHandler} submitHandler={submitHandler}/>);
+    const dateField = screen.getByLabelText(/Date/);
+    const timeField = screen.getByLabelText(/Time/);
+    const guestsField = screen.getByLabelText(/Guests/);
+    
+    act(() => {
+        fireEvent.change(dateField, { target: { value: resDate } });
+        userEvent.selectOptions(timeField, resTime);
+        fireEvent.change(guestsField, { target: { value: 2 } });
+    });
+
+    const submitButton = screen.getByRole('button');
+    expect(submitButton.disabled).toBe(false);
+    
+
+})
 
 

@@ -13,7 +13,7 @@ const Hero= () => {
                     <p className="hero-text text-light">
                          Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual  environment.  The restaurant features locally sourced menu with daily specials 
                     </p>
-                    <button className="hero-button" type="button">See More</button>
+                    <button aria-label="See More" className="hero-button button" type="button">See More</button>
                 </section>
                 <section className="hero-image">
                     <img  src={foodimage} alt="waiter carrying food" />

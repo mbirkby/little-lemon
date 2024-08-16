@@ -62,20 +62,26 @@ p {
 }
 
 .button {
-    background-color: #F4CE14; 
-   border-radius: 16px;
-   font-size:16px;
-   color:#333333;
-   border-style: none;
-}
-
-.hero-button {
    background-color: #F4CE14; 
    border-radius: 16px;
    font-size:16px;
    color:#333333;
    border-style: none;
 }
+
+.button {
+    background-color: #F4CE14; 
+    border-radius: 16px;
+    font-size:16px;
+    color:#333333;
+    border-style: none;
+}
+
+.button:hover {
+    border-style:solid;
+}
+
+
 
 .specials-button {
    background-color: #F4CE14; 
@@ -100,4 +106,26 @@ p {
 
 .bg-salmon {
     background-color:#EE9972;
+}
+
+.submit-button:disabled {
+    background-color:gray;
+}
+
+
+
+.nav-item:hover {
+    background-color:#EE9972;
+}
+
+.hero-button:hover {
+    border-style:solid;
+}
+
+.specials-button:hover {
+    border-style:solid;
+}
+
+.submit-button:hover {
+    border-style:solid;
 }
