@@ -51,9 +51,6 @@ const Main = () => {
     }
   }
 
-
- 
-
  
 
   return (

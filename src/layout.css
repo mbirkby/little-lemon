@@ -104,16 +104,25 @@ nav {
 
 .delivery-icon {
     width:20px;
+    height:16px;
 }
 
 .specials-card {
     
     display:grid;
     grid-template-columns:1fr;
-    
-    gap:5px;
+   
     height:100%;
     
+}
+
+.special-content {
+    background-color:blue;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:10px;
+    padding:10px;
+    height:100%;
 }
 
 .special-header {
@@ -229,9 +238,15 @@ nav {
     z-index:2;
 }
 
+
+.footer {
+
+}
+
 .footer-block {
     display:flex;
-    gap:15vw;
+   
+   
 
     flex-wrap:wrap;
 
@@ -239,10 +254,10 @@ nav {
 }
 
 .footer-columns {
-   display:flex;  
-   flex-basis:60%;
-   gap:10vw;
-   justify-content:center;
+   flex-grow:1;
+    display:flex;
+    gap:3vw;
+    justify-content:center;
 }
 
 .footer-image {
@@ -251,16 +266,19 @@ nav {
 }
 
 .footer-column {
-   flex-basis:30%;
-   flex-shrink:0;
-   flex-grow:1;
+   
 }
 
 .booking-form {
-    width:40%;
+    width:50%;
+    min-width:250px;
     margin:auto;
+    padding:10px;
+
     
 }
+    
+
 
 .button {
     width:200px;
@@ -273,6 +291,22 @@ nav {
     padding:10px;
     gap:10px;
 }
+
+
+   
+
+.confirm-block {
+    width:40%;
+    margin:auto;
+    padding:10px;
+   
+}
+
+.booking-details {
+    padding:20px 0;
+}
+
+
 
 @media screen and (max-width:800px){
     .hero-block {

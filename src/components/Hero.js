@@ -3,8 +3,8 @@ import foodimage from "../assets/images/restauranfood.jpg"
 
 const Hero= () => {
     return (
-        <article className='hero bg-green'>
-            <div className="hero-block content-block">
+        <article className='hero '>
+            <div className="hero-block content-block bg-green">
                 <section className="hero-text">
                     <div className="hero-titles">
                         <h1 className="text-yellow text-title" >Little Lemon</h1>

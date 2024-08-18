@@ -60,10 +60,10 @@ const BookingForm = ({availableTimes, dateChangeHandler, submitHandler}) => {
 
 
     return (
-        <div className="booking-block content-block bg-green">
-            <div className="booking-form  text-light">
+        <div className="booking-block content-block ">
+            <div className="booking-form  text-yellow bg-green">
                 <h1>Booking Form</h1>
-                <form className=" booking-inputs" onSubmit={handleSubmit}>
+                <form className=" booking-inputs text-light" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="res_date">Date*</label><br />
                         <input type="date" value={resDate}  onChange={e => updateDate(e.target.value)} name="res_date" id="res_date" required/>
