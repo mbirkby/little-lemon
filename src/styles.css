@@ -23,8 +23,6 @@ body {
     background-color:#EDEFEE;
 }
 
-
-
 .nav-item {
     list-style-type: none;
     border-radius:8px;
@@ -39,8 +37,6 @@ li > Link  {
 .nav-item:hover {
     background-color: #fbdabb;
 }
-
-
 
 h1 {
     font-family:Markaza, 'Times New Roman', Times, serif;
@@ -123,10 +119,6 @@ p {
     background-color:gray;
 }
 
-
-
-
-
 .hero-button:hover {
     border-style:solid;
 }
@@ -141,11 +133,9 @@ p {
 
 .booking-form {
     border: 3px solid #F4CE14;
-  
     border-radius:16px;
 }
 
 .confirm-block {
     border:3px solid #F4CE14
-   
 }
