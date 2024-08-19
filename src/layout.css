@@ -1,3 +1,4 @@
+/*DEFAULT LAYOUTS*/
 * {
     margin:0;
     padding:0;
@@ -5,11 +6,16 @@
 
 .content-block {
     width:80%;
-    margin: 20px auto 20px auto;
+    margin: 80px auto;
+}
+
+.button {
+    width:150px;
+    height:50px;
 }
 
 
-
+/*HEADER*/
 .header-block {
     display:flex;
     flex-wrap:wrap;
@@ -18,15 +24,24 @@
 
 }
 
-
-.nav-list {
-    display:flex;
-    margin-right:10px;
-    gap:20px;
+.header-logo {
+    height:80px;
 }
 
 
+.nav-list {
+    display:flex;
+    flex-wrap:wrap;
+    margin-right:10px;
+    
+}
 
+.nav-item {
+    padding:3px 10px 5px 10px;
+}
+
+
+/*HERO*/
 .hero-block {
     display:grid;
     grid-template-columns:40% 40%;
@@ -34,8 +49,6 @@
     justify-content:center;
     gap:1vw;
 }
-
-
 
 .hero-text {
    display:grid;
@@ -60,16 +73,16 @@
     height:50px;
 }
 
+
+/*SPECIALS*/
+
 .specials-header {
     display:flex;
     padding:10px 0;
     justify-content:space-between;
 }
 
-.specials-button {
-    width:200px;
-    height:50px;
-}
+
 
 .specials-list {
     display: grid;
@@ -94,7 +107,7 @@
 }
 
 .special-content {
-    background-color:blue;
+   
     display: grid;
     grid-template-columns: 1fr;
     gap:10px;
@@ -112,6 +125,8 @@
     justify-content:space-between;
 }
 
+
+/*TESTIMONIALS*/
 
 .testimonial-title {
     width:6em;
@@ -150,7 +165,7 @@
     width:100%;
 }
 
-
+/*ABOUT*/
 .about-block {
    display:grid;
    grid-template-columns: 40% 40%;
@@ -191,7 +206,7 @@
     z-index:2;
 }
 
-
+/*FOOTER*/
 .footer-block {
     display:flex;
     flex-wrap:wrap;
@@ -213,6 +228,8 @@
    
 }
 
+
+/*BOOKING FORM*/
 .booking-form {
     width:50%;
     min-width:250px;
@@ -221,10 +238,7 @@
 }
 
 
-.button {
-    width:200px;
-    height:50px;
-}
+
 
 .booking-inputs {
     display: grid;
@@ -234,7 +248,7 @@
 }
 
 .confirm-block {
-    width:40%;
+    width:50%;
     margin:auto;
     padding:10px;
 }
@@ -244,20 +258,32 @@
 }
 
 
-
+/*SMALLER SCREENS*/
 @media screen and (max-width:800px){
+    /*HERO*/
     .hero-block {
         grid-template-columns: 1fr;
+        gap:20px;
     }
 
+    .hero-text {
+        margin:10px 0;
+    }
+
+    /*SPECIALS*/
     .specials-list {
         grid-template-columns: 1fr;
+        gap:20px;
     }
 
+   
+
+    /*TESTIMONIALS*/
     .testimonials-list {
         grid-template-columns: 1fr 1fr;
     }
 
+    /*ABOUT*/
     .about-block {
         grid-template-columns: 1fr;
         gap:20px;

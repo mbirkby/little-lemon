@@ -1,3 +1,4 @@
+/*BASIC THEME COLOURS*/
 .bg-green {
     background-color:#495E57;
 }
@@ -18,24 +19,17 @@
     color:#333333;
 }
 
+.bg-grey {
+    background-color:#dddddd;
+}
 
+.bg-salmon {
+    background-color:#EE9972;
+}
+
+/*GENERAL THEME STYLES*/
 body {
     background-color:#EDEFEE;
-}
-
-.nav-item {
-    list-style-type: none;
-    border-radius:8px;
-    padding:3px 10px 5px 10px;
-    transition: background-color 0.8s;
-}
-
-li > Link  {
-    text-decoration: none;
-}
-
-.nav-item:hover {
-    background-color: #fbdabb;
 }
 
 h1 {
@@ -45,31 +39,6 @@ h1 {
 
 p {
     font-family:Karla,Verdana, Geneva, Tahoma, sans-serif;
-}
-
-
-.specials-list {
-    list-style-type: none;
-}
-
-.special-image {
-    border-radius:16px 16px 0 0;
-}
-
-.testimonials-list {
-    list-style-type: none;
-}
-
-.footer-column > li {
-    list-style-type: none; 
-}
-
-.button {
-   background-color: #F4CE14; 
-   border-radius: 16px;
-   font-size:16px;
-   color:#333333;
-   border-style: none;
 }
 
 .button {
@@ -86,56 +55,71 @@ p {
 
 
 
-.specials-button {
-   background-color: #F4CE14; 
-   border-radius: 16px;
-   font-size:16px;
-   color:#333333;
-   border-style: none;
+/*NAVIGATION*/
+.nav-item {
+    list-style-type: none;
+    border-radius:8px;
+    
+    transition: background-color 0.8s;
 }
 
-.special-title {
-    font-family:Karla,Verdana, Geneva, Tahoma, sans-serif;
-    font-size:18px;
-    font-weight: bold;
-
+li > Link  {
+    text-decoration: none;
 }
 
-.special-price {
-    font-family:Karla,Verdana, Geneva, Tahoma, sans-serif;
-    font-size:18px;
-    color:#EE9972;
+.nav-item:hover {
+    background-color: #dddddd
 }
 
-.delivery-icon {
-    fill:yellowgreen;
+
+/*SPECIALS*/
+.specials-list {
+    list-style-type: none;
 }
 
-.bg-salmon {
-    background-color:#EE9972;
+.special-image {
+    border-radius:16px 16px 0 0;
+}
+
+ .special-title {
+     font-family:Karla,Verdana, Geneva, Tahoma, sans-serif;
+     font-size:18px;
+     font-weight: bold;
+
+ }
+
+ .special-price {
+     font-family:Karla,Verdana, Geneva, Tahoma, sans-serif;
+     font-size:18px;
+     color:#EE9972;
+ }
+
+
+/*TESTIMONIALS*/
+.testimonials-list {
+    list-style-type: none;
+}
+
+.footer-column > li {
+    list-style-type: none; 
+}
+
+
+/*BOOKING FORM*/
+.booking-form {
+    border: 3px solid #F4CE14;
+    border-radius:16px;
 }
 
 .submit-button:disabled {
     background-color:gray;
 }
 
-.hero-button:hover {
-    border-style:solid;
-}
-
-.specials-button:hover {
-    border-style:solid;
-}
-
-.submit-button:hover {
-    border-style:solid;
-}
-
-.booking-form {
-    border: 3px solid #F4CE14;
+.confirm-block {
+    border:3px solid #F4CE14;
     border-radius:16px;
 }
 
-.confirm-block {
-    border:3px solid #F4CE14
-}
+
+
+

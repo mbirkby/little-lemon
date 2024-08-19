@@ -7,12 +7,12 @@ const Nav = () => {
     return (
       
         <nav>
-            <ul className="nav-list text-yellow">
-                <li className="nav-item"><Link to="/">Home</Link></li>
-                <li className="nav-item"><Link to="/">About</Link></li>
-                <li className="nav-item"><Link to="/booking">Reservations</Link></li>
-                <li className="nav-item"><Link to="/">Order</Link></li>
-                <li className="nav-item"><Link to="/">Login</Link></li>
+            <ul className="nav-list text-dark">
+                <li className="nav-item"><Link to="/">HOME</Link></li>
+                <li className="nav-item">ABOUT</li>
+                <li className="nav-item"><Link to="/booking">RESERVATIONS</Link></li>
+                <li className="nav-item">ORDER</li>
+                <li className="nav-item">LOGIN</li>
             </ul>
         </nav>
       
